@@ -1,5 +1,20 @@
-@gray: gray;
+@color_gray: gray;
+@color_white: white;
+@color_black: black;
 
 body {
-  background-color: darken(@gray, 40%);
+  background-color: @color_black;
+}
+
+// *** JumboTron ***
+.jumbotron .h1, .jumbotron h1 {
+  color: @color_white;
+}
+
+.jumbotron {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: @color_black;
 }

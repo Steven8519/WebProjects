@@ -10,17 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var navbar_component_1 = require("./components/navbar/navbar.component");
+var home_component_1 = require("./components/home/home.component");
+var about_component_1 = require("./components/about/about.component");
+var router_1 = require("@angular/router");
+var jumbotron_component_1 = require("./components/jumbotron/jumbotron.component");
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(rourer) {
+        this.rourer = rourer;
     }
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
             templateUrl: 'app.component.html',
-            directives: [navbar_component_1.NavbarComponent]
-        }), 
-        __metadata('design:paramtypes', [])
+            directives: [router_1.ROUTER_DIRECTIVES, jumbotron_component_1.JumboComponent, navbar_component_1.NavbarComponent, home_component_1.HomeComponent, about_component_1.AboutComponent]
+        }),
+        router_1.Routes([
+            { path: '/', component: home_component_1.HomeComponent },
+            { path: '/about', component: about_component_1.AboutComponent }
+        ]), 
+        __metadata('design:paramtypes', [router_1.Router])
     ], AppComponent);
     return AppComponent;
 }());
